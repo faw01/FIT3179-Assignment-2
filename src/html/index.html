@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Green Shift</title>
+
+  <!-- vega, vega-lite and embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- purecss -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"
+    integrity="sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls" crossorigin="anonymous">
+
+  <!-- tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- styles.css -->
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <!-- main.js -->
+  <script src="../js/main.js"></script>
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- mate sc and inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Mate+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- background image -->
+  <img id="background" src="../img/light_city.png">
+
+  <div class="vertical">
+
+    <div id="title" class="center pill mt-14">
+      <p class="text-8xl">The Green Shift</p>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="h1">
+      <p>Is it too late?</p>
+      <p class="text">As global greenhouse gas emissions continue to escalate, the looming threat of irreversible
+        climate change casts a shadow over our future. The pivotal question arises: Is it too late to mitigate the
+        impending impacts and safeguard the environment for future generations? The answer hinges on our collective
+        actions today... with The Green Shift. </p>
+    </div>
+
+    <div class="pill">
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="pr-16">
+            <p class="subheading">Isn't global warming a hoax?</p>
+            <p class="text columns-1" style="margin-bottom: 2em;">
+              Global warming reflects the escalating average temperatures of our planet, largely attributed to the
+              amplified greenhouse gas concentrations in the atmosphere. These elevations disrupt global climate
+              patterns, intensifying heatwaves, altering rainfall patterns, and elevating sea levels. The consequences
+              are pervasive, affecting ecosystems, human health, and economies globally. So... no. Global Warming is not
+              a hoax.
+            </p>
+          </div>
+
+          <div class="pr-16">
+            <p class="subheading" style="margin-top: 1em;">Climate Change</p>
+            <p class="text columns-2">
+              Climate change signifies long-term alterations in temperature, precipitation, wind patterns, and other
+              aspects of the Earth's climate system. The global temperature anomaly, highlighting a deviation from a
+              baseline (often a long-term average), is a critical indicator of this change. In 2022, the global
+              temperature has witnessed a concerning rise, being 0.8 degrees Celsius above the average. This shift,
+              while seemingly minor, has profound impacts, exacerbating weather extremes, endangering species, and
+              posing significant risks to our societies and ecosystems.
+            </p>
+          </div>
+        </div>
+
+        <div class="pure-u-1-2">
+          <p class="subheading">Temperature Change</p>
+          <div class="pt-5 center">
+            <div id="temperature_change"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pure-g pt-10">
+        <div class="pure-u-2-3">
+          <div class="pr-16">
+            <p class="subheading">So who's polluting?</p>
+            <p class="text columns-2">
+              The discourse on greenhouse gas emissions often spotlights the significant contributors, revealing a
+              disparity between nations in terms of emissions per capita. Western countries like the US, Canada, and
+              Australia, despite having advanced technologies and resources, consistently rank high in per capita
+              emissions. This is largely due to their industrial activities, energy-intensive lifestyles, and
+              consumption patterns. Similarly, nations like Oman, UAE, and Mongolia, albeit different in size and global
+              influence, also showcase elevated emissions per capita, attributed to factors like robust oil industries
+              and rapid urbanization.
+            </p>
+          </div>
+
+          <div class="pt-5">
+            <div id="temperature_map"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="h1">
+      <p>The Green Shift</p>
+      <p class="text">In the face of climate challenges, The Green Shift brings forth a glimmer of hope, uniting
+        financial backing, scientific innovation, and collective action towards a sustainable future. As billions are
+        invested into initiatives that mitigate environmental impacts, notable advancements surface across various
+        sectors. The strategic application of carbon offsets, accelerated adoption of electric vehicles, promotion of
+        alternative lifestyle choices like 'Meatless Mondays', and a substantial increase in renewable energy production
+        collectively signal a transformative move towards sustainability. The Green Shift not only signifies a
+        transition in energy and consumption practices but also symbolizes a collaborative stride towards safeguarding
+        our planet.</p>
+    </div>
+
+    <div class="pill">
+      <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="pr-16">
+            <p class="subheading">Renewable Progress</p>
+            <p class="text columns-1" style="margin-bottom: 2em;">
+              In just a decade, remarkable strides in renewable energy have led to a significant decrease in costs, with
+              wind energy becoming three times cheaper and solar energy dropping to one-tenth of its previous cost. Even
+              amidst the substantial global infrastructure and subsidies bolstering fossil fuels, renewables like wind
+              and solar have become not only more affordable but also more economically viable than traditional fossil
+              fuel-based power plants. This pivotal progress signals a hopeful shift towards a sustainable and
+              economically sound energy future.
+            </p>
+          </div>
+
+          <div class="pr-16">
+            <p class="subheading" style="margin-top: 1em;">Is it enough?</p>
+            <p class="text">
+              The surge in renewable energy production over the past decade has been remarkable, with solar energy
+              production amplifying by 25 times and wind energy by five times. This substantial growth, while
+              monumental, brings forth significant challenges, particularly dealing with the variability of power
+              output.
+            </p>
+          </div>
+        </div>
+
+        <div class="pure-u-1-2">
+          <p class="subheading">Cost of Energy</p>
+          <div class="pt-5 center">
+            <div id="energy_cost"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pure-g pt-10">
+        <div class="pure-u-2-3">
+          <div class="pr-16">
+            <p class="subheading">The Battery Battle</p>
+            <p class="text columns-2">
+              The discourse on greenhouse gas emissions often spotlights the significant contributors, revealing a
+              disparity between nations in terms of emissions per capita. Western countries like the US, Canada, and
+              Australia, despite having advanced technologies and resources, consistently rank high in per capita
+              emissions. This is largely due to their industrial activities, energy-intensive lifestyles, and
+              consumption patterns. Similarly, nations like Oman, UAE, and Mongolia, albeit different in size and global
+              influence, also showcase elevated emissions per capita, attributed to factors like robust oil industries
+              and rapid urbanization.
+            </p>
+          </div>
+
+          <div class="pt-5">
+            <div id="area"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- embed -->
+
+    <script type="text/javascript">
+
+      // Palmer Station Slide
+
+      var temperature_change = "../json/temperature_change.json";
+      var temperature_map = "../json/map.json";
+      var temperature_line = "../json/area.json";
+      var energy_cost = "../json/rank.json"
+      var area = "../json/area.json"
+
+
+      vegaEmbed('#temperature_change', temperature_change, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+
+      vegaEmbed('#temperature_map', temperature_map, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+
+      vegaEmbed('#temperature_line', temperature_line, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+
+      vegaEmbed('#energy_cost', energy_cost, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+
+      vegaEmbed('#area', area, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+      }).catch(console.error);
+
+    </script>
+
+</body>
+
+</html>

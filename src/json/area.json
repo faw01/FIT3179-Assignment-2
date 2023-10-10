@@ -1,0 +1,139 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Renewable Energy Production Over Time",
+    "font": "Inter",
+    "fontSize": 18,
+    "color": "black"
+  },
+  "vconcat": [
+    {
+      "width": 600,
+      "height": 400,
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "axis": {
+            "title": "Year",
+            "labelFont": "Inter",
+            "labelFontSize": 12,
+            "titleFont": "Inter",
+            "titleFontSize": 14
+          },
+          "scale": {
+            "domain": {
+              "param": "brush"
+            }
+          }
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "value",
+          "axis": {
+            "title": "Production (in TWh)",
+            "labelFont": "Inter",
+            "labelFontSize": 12,
+            "titleFont": "Inter",
+            "titleFontSize": 14
+          }
+        },
+        "color": {
+          "field": "source",
+          "scale": {
+            "scheme": "category20b"
+          },
+          "legend": {
+            "title": "Energy Source",
+            "labelFont": "Inter",
+            "labelFontSize": 12,
+            "titleFont": "Inter",
+            "titleFontSize": 14
+          }
+        }
+      },
+      "transform": [
+        {
+          "fold": [
+            "Solar",
+            "Wind",
+            "Hydro",
+            "Other"
+          ],
+          "as": [
+            "source",
+            "value"
+          ]
+        }
+      ]
+    },
+    {
+      "width": 600,
+      "height": 60,
+      "mark": "area",
+      "params": [
+        {
+          "name": "brush",
+          "select": {
+            "type": "interval",
+            "encodings": [
+              "x"
+            ]
+          }
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "aggregate": "sum",
+          "field": "value",
+          "axis": {
+            "tickCount": 3,
+            "grid": false,
+            "title": ""
+          }
+        },
+        "color": {
+          "field": "source",
+          "scale": {
+            "scheme": "category20b"
+          }
+        }
+      },
+      "transform": [
+        {
+          "fold": [
+            "Solar",
+            "Wind",
+            "Hydro",
+            "Other"
+          ],
+          "as": [
+            "source",
+            "value"
+          ]
+        }
+      ]
+    }
+  ],
+  "data": {
+    "url": "../data/renewable-energy.csv",
+    "format": {
+      "type": "csv"
+    }
+  },
+  "background": "#eeeeee",
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domainColor": "#ddd"
+    },
+    "background": "#eeeeee"
+  }
+}

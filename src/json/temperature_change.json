@@ -1,0 +1,155 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Global Temperature Anomalies from 1850 to 2022",
+    "font": "Inter",
+    "fontSize": 18
+  },
+  "width": 561,
+  "height": 400,
+  "background": "#eeeeee",
+  "data": {
+    "url": "../data/temperature-anomaly.csv"
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal",
+          "axis": {
+            "title": "Year",
+            "format": "%Y",
+            "labelAlign": "center",
+            "labelAngle": 0,
+            "domain": false,
+            "grid": false
+          }
+        },
+        "y": {
+          "field": "Global Average Temperature Change",
+          "type": "quantitative",
+          "axis": {
+            "title": "Temperature Anomaly (°C)"
+          }
+        },
+        "color": {
+          "field": "Global Average Temperature Change",
+          "type": "quantitative",
+          "legend": {
+            "title": "Temperature Change",
+            "labelExpr": "datum.label + '°C'"
+          },
+          "scale": {
+            "domain": [
+              -0.25,
+              -0.02,
+              0.25,
+              0.5,
+              0.65,
+              0.9
+            ],
+            "range": [
+              "#3583bd",
+              "#8cb9da",
+              "#ffc363",
+              "#fb863c",
+              "#cd2a26",
+              "#860326"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "bar",
+        "fillOpacity": 0
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "Global Average Temperature Change",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "type": "temporal",
+            "title": "Year",
+            "format": "%Y"
+          },
+          {
+            "field": "Global Average Temperature Change",
+            "type": "quantitative",
+            "title": "Temperature Change (°C)"
+          }
+        ]
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "temporal"
+        },
+        "y": {
+          "field": "mean_temp",
+          "type": "quantitative"
+        },
+        "color": {
+          "value": "black"
+        }
+      },
+      "transform": [
+        {
+          "window": [
+            {
+              "op": "mean",
+              "field": "Global Average Temperature Change",
+              "as": "mean_temp"
+            }
+          ],
+          "frame": [
+            -2,
+            2
+          ],
+          "sort": [
+            {
+              "field": "Year"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "config": {
+    "text": {
+      "font": "Inter"
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter"
+    },
+    "legend": {
+      "titleFont": "Inter",
+      "labelFont": "Inter"
+    },
+    "title": {
+      "font": "Inter"
+    },
+    "view": {
+      "stroke": null
+    },
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
+    }
+  }
+}

@@ -1,0 +1,212 @@
+/* Reset CSS */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Reset CSS */
+
+
+/* Custom CSS */
+
+#title {
+    height: 9.375rem;
+    /* 150px equivalent in rem */
+    font-family: 'Mate SC';
+}
+
+#background {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.pill {
+    background: #eeeeee;
+    padding: 0.75rem;
+    margin-right: 0.625rem;
+    margin-left: 0.625rem;
+    margin-bottom: 0.625rem;
+    border-radius: 1.875rem;
+    border: 1px solid black;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3)
+}
+
+.h1 {
+    font-family: 'Mate SC';
+    padding: 0.75rem;
+    /* 12px equivalent in rem */
+    font-size: 3rem;
+    line-height: 1;
+    background: #eeeeee;
+    border: 1px solid black;
+    margin: 0.625rem;
+    /* 10px equivalent in rem */
+    border-radius: 1.875rem;
+    /* 30px equivalent in rem */
+    filter: drop-shadow(0 1.25rem 0.8125rem rgba(0, 0, 0, 0.03)) drop-shadow(0 0.5rem 0.3125rem rgba(0, 0, 0, 0.08));
+}
+
+.vertical {
+    width: 93.75rem;
+    /* 1500px equivalent in rem */
+    height: 1250rem;
+    /* 20000px equivalent in rem */
+    position: absolute;
+    /* transform-origin: top; 
+    transform: scale(0.75); */
+}
+
+.subheading {
+    font-family: 'Mate SC';
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    padding-top: 10px;
+}

@@ -1,0 +1,115 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Levelised Cost of Energy Comparison",
+    "font": "Inter",
+    "fontSize": 18
+  },
+  "width": 564,
+  "height": 500,
+  "background": "#eeeeee",
+  "padding": 5,
+  "data": {
+    "url": "../data/levelised_cost_of_energy_comparison.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "point": {
+          "filled": false,
+          "fill": "#fff"
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
+            "grid": false,
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "Mean Levelized Cost of Energy",
+          "type": "quantitative",
+          "title": "Mean Levelized Cost ($/MWh)"
+        },
+        "color": {
+          "field": "Energy",
+          "type": "nominal",
+          "title": "Energy Source",
+          "scale": {
+            "scheme": "tableau10"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Energy",
+            "type": "nominal",
+            "title": "Energy Source"
+          },
+          {
+            "field": "Mean Levelized Cost of Energy",
+            "type": "quantitative",
+            "title": "Mean Levelized Cost ($/MWh)",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -10
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Mean Levelized Cost of Energy",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Mean Levelized Cost of Energy",
+          "type": "quantitative",
+          "format": ".2f"
+        },
+        "color": {
+          "field": "Energy",
+          "type": "nominal",
+          "legend": null
+        }
+      }
+    }
+  ],
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14,
+      "titleColor": "#4a4a4a",
+      "labelColor": "#4a4a4a",
+      "domainColor": "#4a4a4a",
+      "tickColor": "#4a4a4a"
+    },
+    "legend": {
+      "labelFontSize": 12,
+      "titleFontSize": 14,
+      "titleColor": "#4a4a4a",
+      "labelColor": "#4a4a4a"
+    },
+    "line": {
+      "strokeWidth": 3
+    },
+    "point": {
+      "size": 100,
+      "filled": true
+    },
+    "view": {
+      "stroke": "transparent"
+    }
+  }
+}
