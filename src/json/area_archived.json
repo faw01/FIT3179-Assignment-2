@@ -1,7 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Annual CO2 Emissions by Region",
-  "width": 500,
+  "title": {
+    "text": "Annual CO2 Emissions by Region",
+    "color": "black",
+    "font": "Inter",
+    "fontSize": 18,
+    "anchor": "middle"
+  },
+  "width": 1150,
   "height": 500,
   "background": "#eeeeee",
   "data": {
@@ -27,12 +33,8 @@
           },
           "scale": {
             "domain": [
-              {
-                "year": 1850
-              },
-              {
-                "year": 2022
-              }
+              {"year": 1850},
+              {"year": 2022}
             ]
           }
         },
@@ -47,49 +49,26 @@
           "field": "Entity",
           "type": "nominal",
           "legend": {
-            "title": "Region"
+            "title": "Region",
+            "titleFontSize": 14,
+            "labelFontSize": 12
           },
           "scale": {
             "scheme": "tableau10"
           }
         },
         "tooltip": [
-          {
-            "field": "Year",
-            "type": "temporal",
-            "title": "Year",
-            "timeUnit": "year"
-          },
-          {
-            "field": "Entity",
-            "type": "nominal",
-            "title": "Region"
-          },
-          {
-            "field": "Annual CO2 emissions",
-            "type": "quantitative",
-            "title": "Annual CO2 Emissions (tonnes)",
-            "format": ",.0f"
-          }
+          {"field": "Year", "type": "temporal", "title": "Year", "timeUnit": "year"},
+          {"field": "Entity", "type": "nominal", "title": "Region"},
+          {"field": "Annual CO2 emissions", "type": "quantitative", "title": "Annual CO2 Emissions (tonnes)", "format": ",.0f"}
         ]
       },
       "selection": {
         "RegionSelect": {
           "type": "multi",
-          "fields": [
-            "Entity"
-          ],
+          "fields": ["Entity"],
           "bind": "legend",
-          "init": {
-            "Entity": [
-              "North America",
-              "South America",
-              "Europe",
-              "Asia",
-              "Africa",
-              "Oceania"
-            ]
-          }
+          "init": {"Entity": ["North America", "South America", "Europe", "Asia", "Africa", "Oceania"]}
         }
       },
       "transform": [
@@ -104,16 +83,11 @@
       "mark": {
         "type": "rule",
         "color": "black",
-        "strokeDash": [
-          4,
-          4
-        ]
+        "strokeDash": [4, 4]
       },
       "encoding": {
         "x": {
-          "datum": {
-            "year": 1947
-          },
+          "datum": {"year": 1947},
           "type": "temporal"
         }
       }
@@ -121,8 +95,8 @@
     {
       "mark": {
         "type": "text",
-        "font": "Helvetica",
-        "fontSize": "18",
+        "font": "Inter",
+        "fontSize": 18,
         "align": "left",
         "baseline": "middle",
         "dx": -375,
@@ -130,9 +104,7 @@
       },
       "encoding": {
         "x": {
-          "datum": {
-            "year": 1947
-          },
+          "datum": {"year": 1947},
           "type": "temporal"
         },
         "y": {
@@ -148,16 +120,11 @@
       "mark": {
         "type": "rule",
         "color": "black",
-        "strokeDash": [
-          4,
-          4
-        ]
+        "strokeDash": [4, 4]
       },
       "encoding": {
         "x": {
-          "datum": {
-            "year": 2016
-          },
+          "datum": {"year": 2016},
           "type": "temporal"
         }
       }
@@ -165,8 +132,8 @@
     {
       "mark": {
         "type": "text",
-        "font": "Helvetica",
-        "fontSize": "18",
+        "font": "Inter",
+        "fontSize": 18,
         "align": "left",
         "baseline": "middle",
         "dx": -255,
@@ -174,9 +141,7 @@
       },
       "encoding": {
         "x": {
-          "datum": {
-            "year": 2016
-          },
+          "datum": {"year": 2016},
           "type": "temporal"
         },
         "y": {
@@ -195,14 +160,21 @@
     },
     "axis": {
       "labelFont": "Inter",
-      "titleFont": "Inter"
+      "titleFont": "Inter",
+      "labelFontSize": 12,
+      "titleFontSize": 14
     },
     "legend": {
       "titleFont": "Inter",
-      "labelFont": "Inter"
+      "labelFont": "Inter",
+      "labelFontSize": 12,
+      "titleFontSize": 14
     },
     "title": {
       "font": "Inter"
+    },
+    "view": {
+      "stroke": "transparent"
     }
   }
 }

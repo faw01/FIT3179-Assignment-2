@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Energy Source Distribution",
+    "color": "black",
+    "font": "Inter",
+    "fontSize": 18,
+    "anchor": "middle"
+  },
+  "description": "A donut chart showing the distribution of energy sources for a selected year.",
+  "data": {
+    "url": "../data/global-energy-substitution-modified.csv"
+  },
+  "width": 400,
+  "height": 565,
+  "background": "#eeeeee",
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 1965,
+        "max": 2022,
+        "step": 1,
+        "name": "Select Year"
+      }
+    }
+  ],
+  "mark": {
+    "type": "arc",
+    "innerRadius": 100,
+    "stroke": "#696969",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "theta": {
+      "field": "value",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Energy Source",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Renewables", "Gas", "Oil", "Coal", "Biomass"],
+        "range": ["#89a67c", "#696969", "#696969", "#696969", "#696969"]
+      },
+      "legend": {
+        "title": "Energy Source",
+        "labelFont": "Inter",
+        "labelFontSize": 12,
+        "titleFont": "Inter",
+        "titleFontSize": 14
+      }
+    },
+    "tooltip": [
+      {
+        "field": "Energy Source",
+        "type": "nominal"
+      },
+      {
+        "field": "value",
+        "type": "quantitative"
+      }
+    ]
+  },
+  "transform": [
+    {
+      "filter": "datum.Year == selectedYear"
+    },
+    {
+      "fold": ["Renewables", "Gas", "Oil", "Coal", "Biomass"],
+      "as": ["Energy Source", "value"]
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domainColor": "#ddd"
+    },
+    "background": "#f3f3f3",
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
+    }
+  }
+}

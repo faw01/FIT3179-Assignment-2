@@ -4,7 +4,8 @@
     "text": "Renewable Energy Production Over Time",
     "font": "Inter",
     "fontSize": 18,
-    "color": "black"
+    "color": "black",
+    "anchor": "middle"
   },
   "vconcat": [
     {
@@ -23,9 +24,7 @@
             "titleFontSize": 14
           },
           "scale": {
-            "domain": {
-              "param": "brush"
-            }
+            "domain": {"param": "brush"}
           }
         },
         "y": {
@@ -42,7 +41,8 @@
         "color": {
           "field": "source",
           "scale": {
-            "scheme": "category20b"
+            "domain": ["Hydropower", "Solar", "Wind", "Other Renewables"],
+            "range": ["#6897cf", "orange", "#4c698c", "#89a67c"]
           },
           "legend": {
             "title": "Energy Source",
@@ -51,20 +51,17 @@
             "titleFont": "Inter",
             "titleFontSize": 14
           }
-        }
+        },
+        "tooltip": [
+          {"field": "Year", "type": "ordinal", "title": "Year"},
+          {"field": "value", "type": "quantitative", "title": "Production (TWh)", "format": ".2f"},
+          {"field": "source", "type": "nominal", "title": "Energy Source"}
+        ]
       },
       "transform": [
         {
-          "fold": [
-            "Solar",
-            "Wind",
-            "Hydro",
-            "Other"
-          ],
-          "as": [
-            "source",
-            "value"
-          ]
+          "fold": ["Solar", "Wind", "Hydropower", "Other Renewables"],
+          "as": ["source", "value"]
         }
       ]
     },
@@ -75,65 +72,40 @@
       "params": [
         {
           "name": "brush",
-          "select": {
-            "type": "interval",
-            "encodings": [
-              "x"
-            ]
-          }
+          "select": {"type": "interval", "encodings": ["x"]}
         }
       ],
       "encoding": {
-        "x": {
-          "field": "Year",
-          "type": "ordinal"
-        },
+        "x": {"field": "Year", "type": "ordinal"},
         "y": {
           "aggregate": "sum",
           "field": "value",
-          "axis": {
-            "tickCount": 3,
-            "grid": false,
-            "title": ""
-          }
+          "axis": {"tickCount": 3, "grid": false, "title": ""}
         },
         "color": {
           "field": "source",
           "scale": {
-            "scheme": "category20b"
+            "domain": ["Hydropower", "Solar", "Wind", "Other Renewables"],
+            "range": ["#6897cf", "orange", "#4c698c", "#89a67c"]
           }
         }
       },
       "transform": [
         {
-          "fold": [
-            "Solar",
-            "Wind",
-            "Hydro",
-            "Other"
-          ],
-          "as": [
-            "source",
-            "value"
-          ]
+          "fold": ["Solar", "Wind", "Hydropower", "Other Renewables"],
+          "as": ["source", "value"]
         }
       ]
     }
   ],
   "data": {
     "url": "../data/renewable-energy.csv",
-    "format": {
-      "type": "csv"
-    }
+    "format": {"type": "csv"}
   },
   "background": "#eeeeee",
   "config": {
-    "view": {
-      "stroke": null
-    },
-    "axis": {
-      "domainColor": "#ddd"
-    },
+    "view": {"stroke": null},
+    "axis": {"domainColor": "#ddd"},
     "background": "#eeeeee"
   }
 }
