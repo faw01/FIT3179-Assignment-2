@@ -29,7 +29,8 @@
           "type": "temporal",
           "axis": {
             "title": "Year",
-            "format": "%Y"
+            "format": "%Y",
+            "grid": false
           },
           "scale": {
             "domain": [
@@ -42,7 +43,8 @@
           "field": "Annual CO2 emissions",
           "type": "quantitative",
           "axis": {
-            "title": "Annual CO2 Emissions (in tonnes)"
+            "title": "Annual CO2 Emissions (in tonnes)",
+            "grid": true
           }
         },
         "color": {
@@ -96,7 +98,7 @@
       "mark": {
         "type": "text",
         "font": "Inter",
-        "fontSize": 18,
+        "fontSize": 14,
         "align": "left",
         "baseline": "middle",
         "dx": -375,
@@ -133,7 +135,7 @@
       "mark": {
         "type": "text",
         "font": "Inter",
-        "fontSize": 18,
+        "fontSize": 14,
         "align": "left",
         "baseline": "middle",
         "dx": -255,
@@ -175,6 +177,11 @@
     },
     "view": {
       "stroke": "transparent"
+    },
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
     }
   }
 }

@@ -1,0 +1,96 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Energy Source Ranking by Levelized Cost of Energy",
+    "width": 500,
+    "height": 400,
+    "data": {
+      "url": "../data/levelised_cost_of_energy_with_rankings.csv"
+    },
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "axis": {
+          "domain": false,
+          "ticks": false,
+          "tickCount": 15,
+          "title": "Year",
+          "labelFont": "Inter",
+          "labelFontSize": 12,
+          "labelFontWeight": "bold",
+          "labelPadding": 10
+        }
+      },
+      "y": {
+        "field": "Rank",
+        "type": "ordinal",
+        "sort": "ascending",
+        "axis": {
+          "domain": false,
+          "ticks": false,
+          "title": "Rank",
+          "labelFont": "Inter",
+          "labelFontSize": 12,
+          "labelFontWeight": "bold",
+          "labelPadding": 10
+        }
+      },
+      "color": {
+        "field": "Energy",
+        "type": "nominal",
+        "legend": {
+          "title": "Energy Source"
+        }
+      },
+      "opacity": {
+        "condition": {
+          "param": "highlight",
+          "value": 1
+        },
+        "value": 0.2
+      }
+    },
+    "params": [
+      {
+        "name": "highlight",
+        "select": {
+          "type": "point",
+          "fields": ["Energy"],
+          "on": "mouseover",
+          "clear": "mouseout"
+        }
+      }
+    ],
+    "mark": {
+      "type": "line",
+      "point": true,
+      "tooltip": {
+        "content": "data"
+      }
+    },
+    "config": {
+      "text": {
+        "font": "Inter"
+      },
+      "axis": {
+        "labelFont": "Inter",
+        "titleFont": "Inter"
+      },
+      "legend": {
+        "titleFont": "Inter",
+        "labelFont": "Inter"
+      },
+      "title": {
+        "font": "Inter"
+      },
+      "view": {
+        "stroke": null
+      },
+      "style": {
+        "cell": {
+          "stroke": "transparent"
+        }
+      }
+    }
+  }
+  

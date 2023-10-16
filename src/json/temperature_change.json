@@ -5,8 +5,8 @@
     "font": "Inter",
     "fontSize": 18
   },
-  "width": 561,
-  "height": 400,
+  "width": 800,
+  "height": 600,
   "background": "#eeeeee",
   "data": {
     "url": "../data/temperature-anomaly.csv"
@@ -43,20 +43,20 @@
           },
           "scale": {
             "domain": [
-              -0.25,
-              -0.02,
-              0.25,
-              0.5,
-              0.65,
-              0.9
+              -0.95,
+              -0.15,
+              0,
+              0.15,
+              0.15,
+              0.95
             ],
             "range": [
               "#3583bd",
               "#8cb9da",
               "#ffc363",
               "#fb863c",
-              "#cd2a26",
-              "#860326"
+              "#ff7d17", 
+              "#883c00"
             ]
           }
         }
@@ -86,7 +86,8 @@
           {
             "field": "Global Average Temperature Change",
             "type": "quantitative",
-            "title": "Temperature Change (°C)"
+            "title": "Temperature Change (°C)",
+            "format": ".2f"
           }
         ]
       }
@@ -103,7 +104,11 @@
           "type": "quantitative"
         },
         "color": {
-          "value": "black"
+          "value": "black",
+          "legend": {
+            "title": "Average",
+            "orient": "top-right"
+          }
         }
       },
       "transform": [

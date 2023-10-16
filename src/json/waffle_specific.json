@@ -1,0 +1,74 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": "550",
+  "width": "530",
+  "background": "#eeeeee",
+  "data": {
+    "url": "../data/emission_by_sector_general_sector.csv"
+  },
+  "mark": {
+    "type": "square",
+    "filled": true,
+    "size": 1500
+  },
+  "encoding": {
+    "x": {
+      "field": "col",
+      "type": "quantitative",
+      "axis": null
+    },
+    "y": {
+      "field": "row",
+      "type": "quantitative",
+      "axis": null,
+      "sort": "-y"
+    },
+    "color": {
+      "field": "type",
+      "type": "nominal",
+      "legend": {
+        "title": "Energy Type",
+        "titleFont": "Inter",
+        "labelFont": "Inter",
+        "titleFontSize": 14,
+        "labelFontSize": 12,
+        "offset": 50
+      },
+      "scale": {
+        "domain": [
+          "Industry Energy", "Transportation", "Building Energy", "Environmental", "Accidental Leakage", "Fishing",
+          "Cement", "Chemical", "Wastewater", "Landfills", "Crops", "Deforestation", "Crop Burning", "Rice", "Agriculture Soil", "Livestock", "Grassland"
+        ],
+        "range": [
+          "#b61f29", "#8b2939", "#c7135d", "#d3797f", "#e2a5a9", "#ffbaae",
+          "#c7c9c8", "#aaadad", "#006eb7", "#006eb7", "#77d174", "#58bc5c", "#3fa848", "#119445", "#008039", "#318357", "#c3eac1"
+        ]
+      }
+    }
+  },
+  "config": {
+      "text": {
+          "font": "Inter"
+      },
+      "axis": {
+          "labelFont": "Inter",
+          "titleFont": "Inter"
+      },
+      "legend": {
+          "labelFont": "Inter",
+          "titleFont": "Inter"
+      },
+      "title": {
+          "font": "Inter",
+          "fontSize": 18
+      },
+      "view": {
+          "stroke": null
+      },
+      "style": {
+          "cell": {
+              "stroke": "transparent"
+          }
+      }
+  }
+}

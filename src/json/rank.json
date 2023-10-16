@@ -5,8 +5,8 @@
     "font": "Inter",
     "fontSize": 18
   },
-  "width": 564,
-  "height": 500,
+  "width": 930,
+  "height": 600,
   "background": "#eeeeee",
   "padding": 5,
   "data": {
@@ -41,7 +41,8 @@
           "type": "nominal",
           "title": "Energy Source",
           "scale": {
-            "scheme": "tableau10"
+            "domain": ["Nuclear", "Gas Peaking", "Solar Thermal", "Coal", "Geothermal", "Gas Combined", "Solar Photovoltaic", "Wind"],
+            "range": ["grey", "grey", "grey", "grey", "grey", "grey", "orange", "blue"]
           }
         },
         "tooltip": [
@@ -62,7 +63,10 @@
     {
       "mark": {
         "type": "text",
-        "dy": -10
+        "dy": -15,
+        "dx": 15,
+        "fontSize": 18,
+        "font": "Inter"
       },
       "encoding": {
         "x": {
@@ -76,15 +80,20 @@
         "text": {
           "field": "Mean Levelized Cost of Energy",
           "type": "quantitative",
-          "format": ".2f"
+          "format": ",.0f"
         },
         "color": {
           "field": "Energy",
           "type": "nominal",
           "legend": null
         }
-      }
-    }
+      },
+      "transform": [
+        {
+          "filter": "datum.Energy == 'Solar Photovoltaic' || datum.Energy == 'Wind'"
+        }
+      ]
+    }    
   ],
   "config": {
     "axis": {

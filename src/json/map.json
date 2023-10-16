@@ -5,6 +5,9 @@
     "font": "Inter",
     "fontSize": 18
   },
+  "data": {
+    "url": "../data/per-capita-ghg-emissions_all_years.csv"
+  },
   "params": [
     {
       "name": "selectedYear",
@@ -25,6 +28,20 @@
     "type": "equalEarth"
   },
   "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+        "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+      },
+      "transform": [
+        {
+          "calculate": "'No data available for ' + datum.properties.NAME",
+          "as": "note"
+        }
+      ],
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"},
+      "encoding": {"tooltip": {"field": "note"}}
+    },
     {
       "data": {
         "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
@@ -62,16 +79,45 @@
       },
       "transform": [
         {
-          "lookup": "properties.NAME",
+          "lookup": "Country",
           "from": {
             "data": {
               "url": "../data/per-capita-ghg-emissions_all_years.csv"
             },
             "key": "Country",
-            "fields": [
-              "Annual greenhouse gas emissions per capita",
-              "Year"
-            ]
+            "fields": ["Annual greenhouse gas emissions per capita", "Year"]
+          }
+        },
+        {
+          "filter": "datum.Year == selectedYear"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgray",
+        "stroke": "white"
+      },
+      "encoding": {
+        "tooltip": {
+          "field": "note",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "lookup": "Country",
+          "from": {
+            "data": {
+              "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+              "format": {
+                "type": "topojson",
+                "feature": "ne_110m_admin_0_countries"
+              }
+            },
+            "key": "properties.NAME",
+            "fields": ["properties", "type", "geometry"]
           }
         },
         {
@@ -101,13 +147,13 @@
             ],
             "range": [
               "#ffffff",
-              "#fff7bc",
-              "#fee391",
-              "#fec44f",
-              "#db8f3b",
-              "#ec7014",
-              "#cc4c02",
-              "#8c2d04"
+              "#fef9c0",
+              "#fedb85",
+              "#fda34d",
+              "#e48536",
+              "#ed5f11",
+              "#c54000",
+              "#7f2603"
             ],
             "default": "lightgray"
           },
@@ -123,6 +169,11 @@
             "field": "properties.NAME",
             "type": "nominal",
             "title": "Country"
+          },
+          {
+            "field": "Year",
+            "type": "quantitative",
+            "title": "Year"
           },
           {
             "field": "Annual greenhouse gas emissions per capita",

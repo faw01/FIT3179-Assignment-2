@@ -43,7 +43,7 @@
       "type": "nominal",
       "scale": {
         "domain": ["Renewables", "Gas", "Oil", "Coal", "Biomass"],
-        "range": ["#89a67c", "#696969", "#696969", "#696969", "#696969"]
+        "range": ["#89a67c", "#b0b0b0", "#989898", "#7a7a7a", "#383838"]
       },
       "legend": {
         "title": "Energy Source",

@@ -1,0 +1,78 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": "550",
+    "width": "550",
+    "background": "#eeeeee",
+    "data": {
+        "url": "../data/emission_by_sector_general.csv"
+    },
+    "mark": {
+        "type": "square",
+        "filled": true,
+        "size": 1500
+    },
+    "encoding": {
+        "x": {
+            "field": "col",
+            "type": "quantitative",
+            "axis": null
+        },
+        "y": {
+            "field": "row",
+            "type": "quantitative",
+            "axis": null,
+            "sort": "-y"
+        },
+        "color": {
+            "field": "type",
+            "type": "nominal",
+            "scale": {
+                "domain": [
+                    "Energy",
+                    "Industry",
+                    "Waste",
+                    "Agriculture"
+                ],
+                "range": [
+                    "#bf1a49",
+                    "#717d78",
+                    "#315a83",
+                    "#00a47a"
+                ]
+            },
+            "legend": {
+                "title": "Sector",
+                "titleFont": "Inter",
+                "labelFont": "Inter",
+                "titleFontSize": 14,
+                "labelFontSize": 12,
+                "offset": 50
+            }
+        }
+    },
+    "config": {
+        "text": {
+            "font": "Inter"
+        },
+        "axis": {
+            "labelFont": "Inter",
+            "titleFont": "Inter"
+        },
+        "legend": {
+            "labelFont": "Inter",
+            "titleFont": "Inter"
+        },
+        "title": {
+            "font": "Inter",
+            "fontSize": 18
+        },
+        "view": {
+            "stroke": null
+        },
+        "style": {
+            "cell": {
+                "stroke": "transparent"
+            }
+        }
+    }
+}

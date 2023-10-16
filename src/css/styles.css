@@ -184,7 +184,7 @@ body {
 .vertical {
     width: 93.75rem;
     /* 1500px equivalent in rem */
-    height: 250rem;
+    height: 400rem;
     /* 20000px equivalent in rem */
     position: absolute;
     /* transform-origin: top; 
