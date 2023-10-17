@@ -3,7 +3,7 @@ Nuclear,2009,123
 Gas Peaking,2009,275
 Solar Thermal,2009,168
 Coal,2009,111
-Geothermal,2009,76
+Hydropower,2009,76
 Gas Combined,2009,83
 Solar Photovoltaic,2009,359
 Wind,2009,135
@@ -11,7 +11,7 @@ Nuclear,2010,107
 Gas Peaking,2010,243
 Solar Thermal,2010,157
 Coal,2010,111
-Geothermal,2010,107
+Hydropower,2010,107
 Gas Combined,2010,96
 Solar Photovoltaic,2010,248
 Wind,2010,124
@@ -19,7 +19,7 @@ Nuclear,2011,104
 Gas Peaking,2011,227
 Solar Thermal,2011,159
 Coal,2011,111
-Geothermal,2011,104
+Hydropower,2011,104
 Gas Combined,2011,95
 Solar Photovoltaic,2011,159
 Wind,2011,71
@@ -27,7 +27,7 @@ Nuclear,2012,102
 Gas Peaking,2012,216
 Solar Thermal,2012,174
 Coal,2012,102
-Geothermal,2012,116
+Hydropower,2012,116
 Gas Combined,2012,75
 Solar Photovoltaic,2012,125
 Wind,2012,72
@@ -35,7 +35,7 @@ Nuclear,2013,105
 Gas Peaking,2013,205
 Solar Thermal,2013,145
 Coal,2013,105
-Geothermal,2013,116
+Hydropower,2013,116
 Gas Combined,2013,74
 Solar Photovoltaic,2013,104
 Wind,2013,70
@@ -43,7 +43,7 @@ Nuclear,2014,116
 Gas Peaking,2014,205
 Solar Thermal,2014,124
 Coal,2014,112
-Geothermal,2014,116
+Hydropower,2014,116
 Gas Combined,2014,74
 Solar Photovoltaic,2014,79
 Wind,2014,59
@@ -51,7 +51,7 @@ Nuclear,2015,117
 Gas Peaking,2015,192
 Solar Thermal,2015,150
 Coal,2015,108
-Geothermal,2015,100
+Hydropower,2015,100
 Gas Combined,2015,64
 Solar Photovoltaic,2015,64
 Wind,2015,55
@@ -59,7 +59,7 @@ Nuclear,2016,117
 Gas Peaking,2016,191
 Solar Thermal,2016,151
 Coal,2016,102
-Geothermal,2016,98
+Hydropower,2016,98
 Gas Combined,2016,63
 Solar Photovoltaic,2016,55
 Wind,2016,47
@@ -67,7 +67,7 @@ Nuclear,2017,148
 Gas Peaking,2017,183
 Solar Thermal,2017,140
 Coal,2017,102
-Geothermal,2017,97
+Hydropower,2017,97
 Gas Combined,2017,60
 Solar Photovoltaic,2017,50
 Wind,2017,45
@@ -75,7 +75,7 @@ Nuclear,2018,151
 Gas Peaking,2018,179
 Solar Thermal,2018,140
 Coal,2018,102
-Geothermal,2018,91
+Hydropower,2018,91
 Gas Combined,2018,58
 Solar Photovoltaic,2018,43
 Wind,2018,42
@@ -83,7 +83,7 @@ Nuclear,2019,155
 Gas Peaking,2019,175
 Solar Thermal,2019,141
 Coal,2019,109
-Geothermal,2019,91
+Hydropower,2019,91
 Gas Combined,2019,56
 Solar Photovoltaic,2019,41
 Wind,2019,40
@@ -91,7 +91,7 @@ Nuclear,2020,163
 Gas Peaking,2020,175
 Solar Thermal,2020,139
 Coal,2020,112
-Geothermal,2020,80
+Hydropower,2020,80
 Gas Combined,2020,59
 Solar Photovoltaic,2020,37
 Wind,2020,37
@@ -99,7 +99,7 @@ Nuclear,2021,167
 Gas Peaking,2021,173
 Solar Thermal,2021,132
 Coal,2021,108
-Geothermal,2021,75
+Hydropower,2021,75
 Gas Combined,2021,60
 Solar Photovoltaic,2021,36
 Wind,2021,36
@@ -107,7 +107,7 @@ Nuclear,2022,167
 Gas Peaking,2022,173
 Solar Thermal,2022,120
 Coal,2022,108
-Geothermal,2022,75
+Hydropower,2022,75
 Gas Combined,2022,60
 Solar Photovoltaic,2022,36
 Wind,2022,36
@@ -115,7 +115,7 @@ Nuclear,2023,180
 Gas Peaking,2023,180
 Solar Thermal,2023,124
 Coal,2023,117
-Geothermal,2023,82
+Hydropower,2023,82
 Gas Combined,2023,70
 Solar Photovoltaic,2023,60
 Wind,2023,50

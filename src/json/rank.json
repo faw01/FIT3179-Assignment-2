@@ -5,7 +5,7 @@
     "font": "Inter",
     "fontSize": 18
   },
-  "width": 930,
+  "width": 915,
   "height": 600,
   "background": "#eeeeee",
   "padding": 5,
@@ -13,6 +13,54 @@
     "url": "../data/levelised_cost_of_energy_comparison.csv"
   },
   "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "fill": "#D3D3D3",
+        "fillOpacity": 0.5
+      },
+      "data": {
+        "values": [{"x": "2009", "x2": "2012", "y": 0, "y2": 400}]
+      },
+      "encoding": {
+        "x": {"field": "x", "type": "ordinal"},
+        "x2": {"field": "x2"},
+        "y": {"field": "y", "type": "quantitative"},
+        "y2": {"field": "y2"}
+      }
+    },
+    {
+      "data": {
+        "values": [{"x": "2010", "y": 250, "annotation": "100,000 solar patents filed during 2009 to 2011 causing a large drop in costs."}]
+
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 14,
+        "font": "Inter",
+        "dx": 380, 
+        "dy": -150
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "annotation",
+          "type": "ordinal"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    },
     {
       "mark": {
         "type": "line",
@@ -28,22 +76,27 @@
           "title": "Year",
           "axis": {
             "grid": false,
-            "labelAngle": 0
+            "labelAngle": 0,
+            "labelFontSize": 16
           }
         },
         "y": {
           "field": "Mean Levelized Cost of Energy",
           "type": "quantitative",
-          "title": "Mean Levelized Cost ($/MWh)"
+          "title": "Mean Levelized Cost ($/MWh)",
+          "axis": {
+            "labelFontSize": 16 
+          }
         },
         "color": {
           "field": "Energy",
           "type": "nominal",
           "title": "Energy Source",
           "scale": {
-            "domain": ["Nuclear", "Gas Peaking", "Solar Thermal", "Coal", "Geothermal", "Gas Combined", "Solar Photovoltaic", "Wind"],
-            "range": ["grey", "grey", "grey", "grey", "grey", "grey", "orange", "blue"]
-          }
+            "domain": ["Nuclear", "Gas Peaking", "Solar Thermal", "Coal", "Hydropower", "Gas Combined", "Solar Photovoltaic", "Wind"],
+            "range": ["grey", "grey", "grey", "grey", "#6897cf", "grey", "orange", "#002858"]
+          },
+          "legend": null
         },
         "tooltip": [
           {
@@ -55,7 +108,7 @@
             "field": "Mean Levelized Cost of Energy",
             "type": "quantitative",
             "title": "Mean Levelized Cost ($/MWh)",
-            "format": ".2f"
+            "format": ",.0f"
           }
         ]
       }
@@ -63,9 +116,9 @@
     {
       "mark": {
         "type": "text",
-        "dy": -15,
+        "dy": -20,
         "dx": 15,
-        "fontSize": 18,
+        "fontSize": 15,
         "font": "Inter"
       },
       "encoding": {
@@ -80,7 +133,7 @@
         "text": {
           "field": "Mean Levelized Cost of Energy",
           "type": "quantitative",
-          "format": ",.0f"
+          "format": "$,.0f"
         },
         "color": {
           "field": "Energy",
@@ -90,35 +143,37 @@
       },
       "transform": [
         {
-          "filter": "datum.Energy == 'Solar Photovoltaic' || datum.Energy == 'Wind'"
+          "filter": "datum.Energy == 'Solar Photovoltaic' || datum.Energy == 'Wind' || datum.Energy == 'Hydropower'"
         }
       ]
     }    
   ],
   "config": {
+    "text": {
+        "font": "Inter",
+        "fontSize": 20
+    },
     "axis": {
-      "labelFontSize": 12,
-      "titleFontSize": 14,
-      "titleColor": "#4a4a4a",
-      "labelColor": "#4a4a4a",
-      "domainColor": "#4a4a4a",
-      "tickColor": "#4a4a4a"
+        "labelFont": "Inter",
+        "titleFont": "Inter",
+        "titleFontSize": 24 
     },
     "legend": {
-      "labelFontSize": 12,
-      "titleFontSize": 14,
-      "titleColor": "#4a4a4a",
-      "labelColor": "#4a4a4a"
+        "titleFont": "Inter",
+        "labelFont": "Inter",
+        "labelFontSize": 24
     },
-    "line": {
-      "strokeWidth": 3
-    },
-    "point": {
-      "size": 100,
-      "filled": true
+    "title": {
+        "font": "Inter",
+        "fontSize": 18
     },
     "view": {
-      "stroke": "transparent"
+        "stroke": null
+    },
+    "style": {
+        "cell": {
+            "stroke": "transparent"
+        }
     }
   }
 }

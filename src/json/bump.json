@@ -1,96 +1,154 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Energy Source Ranking by Levelized Cost of Energy",
-    "width": 500,
-    "height": 400,
-    "data": {
-      "url": "../data/levelised_cost_of_energy_with_rankings.csv"
-    },
-    "encoding": {
-      "x": {
-        "field": "Year",
-        "type": "ordinal",
-        "axis": {
-          "domain": false,
-          "ticks": false,
-          "tickCount": 15,
-          "title": "Year",
-          "labelFont": "Inter",
-          "labelFontSize": 12,
-          "labelFontWeight": "bold",
-          "labelPadding": 10
-        }
-      },
-      "y": {
-        "field": "Rank",
-        "type": "ordinal",
-        "sort": "ascending",
-        "axis": {
-          "domain": false,
-          "ticks": false,
-          "title": "Rank",
-          "labelFont": "Inter",
-          "labelFontSize": 12,
-          "labelFontWeight": "bold",
-          "labelPadding": 10
-        }
-      },
-      "color": {
-        "field": "Energy",
-        "type": "nominal",
-        "legend": {
-          "title": "Energy Source"
-        }
-      },
-      "opacity": {
-        "condition": {
-          "param": "highlight",
-          "value": 1
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Energy Source Ranking by Levelized Cost of Energy",
+    "fontSize": 20,
+    "font": "Inter"
+  },
+  "width": 1245,
+  "height": 645,
+  "background": "#eeeeee",
+  "data": {
+    "url": "../data/levelised_cost_of_energy_with_rankings.csv"
+  },
+  "layer": [
+    {
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal",
+          "axis": {
+            "domain": false,
+            "ticks": false,
+            "tickCount": 15,
+            "title": "Year",
+            "labelFont": "Inter",
+            "labelFontSize": 16,
+            "labelPadding": 10,
+            "labelAngle": 0,
+            "titleFontSize": 18,
+            "grid": true
+          }
         },
-        "value": 0.2
-      }
-    },
-    "params": [
-      {
-        "name": "highlight",
-        "select": {
-          "type": "point",
-          "fields": ["Energy"],
-          "on": "mouseover",
-          "clear": "mouseout"
+        "y": {
+          "field": "Rank",
+          "type": "ordinal",
+          "format": ".0f",
+          "sort": "ascending",
+          "axis": {
+            "domain": false,
+            "ticks": false,
+            "title": "Rank",
+            "titleFontSize": 18,
+            "labelFont": "Inter",
+            "labelFontSize": 16,
+            "labelPadding": 10
+          }
+        },
+        "color": {
+          "field": "Energy",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": ["Nuclear", "Gas Peaking", "Solar Thermal", "Coal", "Hydropower", "Gas Combined", "Solar Photovoltaic", "Wind"],
+            "range": ["grey", "grey", "grey", "grey", "#6897cf", "grey", "orange", "#002858"]
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "highlight",
+            "value": 1
+          },
+          "value": 0.2
+        }
+      },
+      "params": [
+        {
+          "name": "highlight",
+          "select": {
+            "type": "point",
+            "fields": ["Energy"],
+            "on": "mouseover",
+            "clear": "mouseout"
+          }
+        }
+      ],
+      "mark": {
+        "type": "line",
+        "point": {
+          "filled": true,
+          "size": 200
+        },
+        "tooltip": {
+          "content": "data"
         }
       }
-    ],
-    "mark": {
-      "type": "line",
-      "point": true,
-      "tooltip": {
-        "content": "data"
-      }
     },
-    "config": {
-      "text": {
+    {
+      "transform": [
+        {
+          "filter": "datum.Year == '2023'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 15,
+        "dy": 0,
+        "fontSize": 20,
         "font": "Inter"
       },
-      "axis": {
-        "labelFont": "Inter",
-        "titleFont": "Inter"
-      },
-      "legend": {
-        "titleFont": "Inter",
-        "labelFont": "Inter"
-      },
-      "title": {
-        "font": "Inter"
-      },
-      "view": {
-        "stroke": null
-      },
-      "style": {
-        "cell": {
-          "stroke": "transparent"
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "Rank",
+          "type": "ordinal"
+        },
+        "text": {
+          "field": "Energy",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "Energy",
+          "type": "nominal",
+          "legend": null,
+          "scale": {
+            "domain": ["Nuclear", "Gas Peaking", "Solar Thermal", "Coal", "Hydropower", "Gas Combined", "Solar Photovoltaic", "Wind"],
+            "range": ["grey", "grey", "grey", "grey", "grey", "grey", "orange", "blue"]
+          }
         }
       }
     }
+  ],
+  "config": {
+    "text": {
+      "font": "Inter",
+      "fontSize": 14
+    },
+    "axis": {
+      "labelFont": "Inter",
+      "titleFont": "Inter",
+      "titleFontSize": 24
+    },
+    "legend": {
+      "titleFont": "Inter",
+      "labelFont": "Inter",
+      "labelFontSize": 24
+    },
+    "title": {
+      "font": "Inter",
+      "fontSize": 18
+    },
+    "view": {
+      "stroke": null
+    },
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
+    }
   }
-  
+}

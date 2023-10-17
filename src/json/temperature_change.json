@@ -5,7 +5,7 @@
     "font": "Inter",
     "fontSize": 18
   },
-  "width": 800,
+  "width": 700,
   "height": 600,
   "background": "#eeeeee",
   "data": {
@@ -24,14 +24,17 @@
             "labelAlign": "center",
             "labelAngle": 0,
             "domain": false,
-            "grid": false
+            "grid": false,
+            "labelFontSize": 16
           }
         },
         "y": {
           "field": "Global Average Temperature Change",
           "type": "quantitative",
           "axis": {
-            "title": "Temperature Anomaly (°C)"
+            "title": "Temperature Anomaly (°C)",
+            "labelFontSize": 16,
+            "titleFontSize": 18
           }
         },
         "color": {
@@ -39,14 +42,16 @@
           "type": "quantitative",
           "legend": {
             "title": "Temperature Change",
-            "labelExpr": "datum.label + '°C'"
+            "labelExpr": "datum.label + '°C'",
+            "labelFontSize": 16,
+            "titleFontSize": 18
           },
           "scale": {
             "domain": [
               -0.95,
-              -0.15,
+              -0.05,
               0,
-              0.15,
+              0.05,
               0.15,
               0.95
             ],
@@ -131,6 +136,102 @@
           ]
         }
       ]
+    },
+    {
+      "data": {
+        "values": [
+          {"date": "1947", "annotation": "Third Industrial Revolution begins"}
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [20, 10],
+        "color": "grey"
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"date": "1947", "annotation": "Third Industrial Revolution begins"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "lineBreak": "\\",
+        "align": "left",
+        "baseline": "middle",
+        "dx": -230,
+        "dy": -130,
+        "font": "Inter",
+        "fontSize": 14
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal"
+        },
+        "text": {
+          "field": "annotation",
+          "type": "ordinal"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"y": 0.8, "annotation": "Current Anomaly"}
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [20, 10],
+        "color": "grey"
+      },
+      "encoding": {
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"y": 0.8, "annotation": "Current Anomaly"}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "lineBreak": "\\",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 50,
+        "dy": -15,
+        "font": "Inter",
+        "fontSize": 14
+      },
+      "encoding": {
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "annotation",
+          "type": "ordinal"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
     }
   ],
   "config": {
@@ -139,11 +240,15 @@
     },
     "axis": {
       "labelFont": "Inter",
-      "titleFont": "Inter"
+      "titleFont": "Inter",
+      "labelFontSize": 16,
+      "titleFontSize": 18
     },
     "legend": {
       "titleFont": "Inter",
-      "labelFont": "Inter"
+      "labelFont": "Inter",
+      "labelFontSize": 16,
+      "titleFontSize": 18
     },
     "title": {
       "font": "Inter"

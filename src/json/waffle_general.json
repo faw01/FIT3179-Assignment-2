@@ -29,15 +29,15 @@
             "scale": {
                 "domain": [
                     "Energy",
+                    "Agriculture",
                     "Industry",
-                    "Waste",
-                    "Agriculture"
+                    "Waste"
                 ],
                 "range": [
                     "#bf1a49",
+                    "#00a47a",
                     "#717d78",
-                    "#315a83",
-                    "#00a47a"
+                    "#315a83"
                 ]
             },
             "legend": {

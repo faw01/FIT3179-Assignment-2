@@ -36,15 +36,24 @@
       },
       "scale": {
         "domain": [
-          "Industry Energy", "Transportation", "Building Energy", "Environmental", "Accidental Leakage", "Fishing",
-          "Cement", "Chemical", "Wastewater", "Landfills", "Crops", "Deforestation", "Crop Burning", "Rice", "Agriculture Soil", "Livestock", "Grassland"
+          "Industry Energy", "Building Energy", "Transportation", "Unallocated", "Leakage", "Fishing",
+          "Livestock", "Soil", "Crop Burning", "Deforestation", "Cropland", "Rice", "Grassland",
+          "Cement", "Chemical", "Landfills", "Wastewater"
         ],
         "range": [
-          "#b61f29", "#8b2939", "#c7135d", "#d3797f", "#e2a5a9", "#ffbaae",
-          "#c7c9c8", "#aaadad", "#006eb7", "#006eb7", "#77d174", "#58bc5c", "#3fa848", "#119445", "#008039", "#318357", "#c3eac1"
-        ]
+          "#4d212d", "#733143", "#994159", "#bf516f", "#e56185", "#ff6c8a",
+          "#153930", "#235f50", "#318570", "#3fab90", "#4dd1b0", "#5bf7d0", "#8dffea", 
+          "#4d5250", "#949e9a", "#4f667c", "#7fa4c8"
+        ]   
       }
-    }
+    },
+    "tooltip": [
+      {
+        "field": "type",
+        "type": "nominal",
+        "title": "Energy Type"
+      }
+    ]
   },
   "config": {
       "text": {
