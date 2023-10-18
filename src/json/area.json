@@ -8,7 +8,7 @@
     "anchor": "middle"
   },
   "width": 600,
-  "height": 500,
+  "height": 520,
   "data": {
     "url": "../data/renewable-energy.csv",
     "format": {"type": "csv"}
@@ -64,13 +64,109 @@
       }
     },
     {
+      "data": {
+        "values": [{"x": "2010", "y": 250, "annotation": "Solar and wind production double every five years."}]
+
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 14,
+        "font": "Inter",
+        "dx": -130, 
+        "dy": -375
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "annotation",
+          "type": "ordinal"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [{"x": "2010", "y": 250, "annotation": "Hydropower dominated due its cost but faces competition"}]
+
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 14,
+        "font": "Inter",
+        "dx": -250, 
+        "dy": -200
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "annotation",
+          "type": "ordinal"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [{"x": "2010", "y": 250, "annotation": "from cheap alternatives like solar and wind."}]
+
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 14,
+        "font": "Inter",
+        "dx": -300, 
+        "dy": -175
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "annotation",
+          "type": "ordinal"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    },
+    {
       "mark": {
         "type": "rect",
         "fill": "#D3D3D3",
         "fillOpacity": 0.5
       },
       "data": {
-        "values": [{"x": "2017", "x2": "2018", "y": 0, "y2": 8000}]
+        "values": [{"x": "2014", "x2": "2015", "y": 0, "y2": 9000}]
       },
       "encoding": {
         "x": {"field": "x", "type": "ordinal"},
@@ -81,22 +177,21 @@
     },
     {
       "mark": {
-        "type": "text",
-        "fontSize": 14,
-        "dx": -60, 
-        "dy": -100,
-        "align": "center",
-        "baseline": "middle"
+        "type": "rect",
+        "fill": "#D3D3D3",
+        "fillOpacity": 0.5
       },
       "data": {
-        "values": [{"x": "2017", "y": 4000, "annotation": "Solar takeover"}]
+        "values": [{"x": "2019", "x2": "2020", "y": 0, "y2": 9000}]
       },
       "encoding": {
         "x": {"field": "x", "type": "ordinal"},
+        "x2": {"field": "x2"},
         "y": {"field": "y", "type": "quantitative"},
-        "text": {"field": "annotation", "type": "ordinal"}
+        "y2": {"field": "y2"}
       }
     }
+    
   ],
   "transform": [
     {

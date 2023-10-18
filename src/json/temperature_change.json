@@ -167,7 +167,7 @@
         "align": "left",
         "baseline": "middle",
         "dx": -230,
-        "dy": -130,
+        "dy": -90,
         "font": "Inter",
         "fontSize": 14
       },
@@ -206,7 +206,103 @@
     {
       "data": {
         "values": [
-          {"y": 0.8, "annotation": "Current Anomaly"}
+          {"y": 0.8, "annotation": "0.8°C results in life-long damage."}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "lineBreak": "\\",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 50,
+        "dy": -15,
+        "font": "Inter",
+        "fontSize": 14
+      },
+      "encoding": {
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "annotation",
+          "type": "ordinal"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"y": 0.2, "annotation": "Current Anomaly"}
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [20, 10],
+        "color": "grey"
+      },
+      "encoding": {
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"y": 0.2, "annotation": "0.2°C is safe."}
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "lineBreak": "\\",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 50,
+        "dy": -15,
+        "font": "Inter",
+        "fontSize": 14
+      },
+      "encoding": {
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "annotation",
+          "type": "ordinal"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"y": 0.6, "annotation": "Current Anomaly"}
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "strokeDash": [20, 10],
+        "color": "grey"
+      },
+      "encoding": {
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"y": 0.6, "annotation": "0.6°C threatens life and ecosystems."}
         ]
       },
       "mark": {

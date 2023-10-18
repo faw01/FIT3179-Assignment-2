@@ -12,7 +12,7 @@
     "url": "../data/global-energy-substitution-modified.csv"
   },
   "width": 400,
-  "height": 565,
+  "height": 560,
   "background": "#eeeeee",
   "params": [
     {
@@ -42,8 +42,8 @@
       "field": "Energy Source",
       "type": "nominal",
       "scale": {
-        "domain": ["Hydropower", "Solar", "Wind", "Gas", "Oil", "Coal", "Biomass", "Other renewables"],
-        "range": ["#6897cf", "orange", "#002858", "#b0b0b0", "#989898", "#7a7a7a", "#383838", "#89a67c"]
+        "domain": ["Hydropower", "Solar", "Wind", "Other renewables", "Gas", "Oil", "Coal", "Biomass"],
+        "range": ["#6897cf", "orange", "#002858", "#89a67c", "#b0b0b0", "#989898", "#7a7a7a", "#383838"]
       },
       "legend": {
         "title": "Energy Source",
@@ -62,7 +62,7 @@
       {
         "field": "value",
         "type": "quantitative",
-        "title": "Value (TWh)",
+        "title": "Energy (TWh)",
         "format": ",.0f"
       }
     ]

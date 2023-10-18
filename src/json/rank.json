@@ -15,54 +15,6 @@
   "layer": [
     {
       "mark": {
-        "type": "rect",
-        "fill": "#D3D3D3",
-        "fillOpacity": 0.5
-      },
-      "data": {
-        "values": [{"x": "2009", "x2": "2012", "y": 0, "y2": 400}]
-      },
-      "encoding": {
-        "x": {"field": "x", "type": "ordinal"},
-        "x2": {"field": "x2"},
-        "y": {"field": "y", "type": "quantitative"},
-        "y2": {"field": "y2"}
-      }
-    },
-    {
-      "data": {
-        "values": [{"x": "2010", "y": 250, "annotation": "100,000 solar patents filed during 2009 to 2011 causing a large drop in costs."}]
-
-      },
-      "mark": {
-        "type": "text",
-        "align": "center",
-        "baseline": "middle",
-        "fontSize": 14,
-        "font": "Inter",
-        "dx": 380, 
-        "dy": -150
-      },
-      "encoding": {
-        "x": {
-          "field": "x",
-          "type": "ordinal"
-        },
-        "y": {
-          "field": "y",
-          "type": "quantitative"
-        },
-        "text": {
-          "field": "annotation",
-          "type": "ordinal"
-        },
-        "color": {
-          "value": "black"
-        }
-      }
-    },
-    {
-      "mark": {
         "type": "line",
         "point": {
           "filled": false,
@@ -115,6 +67,166 @@
     },
     {
       "mark": {
+        "type": "rect",
+        "fill": "#D3D3D3",
+        "fillOpacity": 0.5
+      },
+      "data": {
+        "values": [{"x": "2009", "x2": "2012", "y": 0, "y2": 400}]
+      },
+      "encoding": {
+        "x": {"field": "x", "type": "ordinal"},
+        "x2": {"field": "x2"},
+        "y": {"field": "y", "type": "quantitative"},
+        "y2": {"field": "y2"}
+      }
+    },
+    {
+      "data": {
+        "values": [{"x": "2010", "y": 250, "annotation": "100,000 solar patents filed during 2009 to 2011 causing a large drop in costs."}]
+
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 14,
+        "font": "Inter",
+        "dx": 380, 
+        "dy": -150
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "annotation",
+          "type": "ordinal"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rect",
+        "fill": "#D3D3D3",
+        "fillOpacity": 0.5
+      },
+      "data": {
+        "values": [{"x": "2022", "x2": "2023", "y": 0, "y2": 400}]
+      },
+      "encoding": {
+        "x": {"field": "x", "type": "ordinal"},
+        "x2": {"field": "x2"},
+        "y": {"field": "y", "type": "quantitative"},
+        "y2": {"field": "y2"}
+      }
+    },
+    {
+      "data": {
+        "values": [{"x": "2010", "y": 250, "annotation": "Today, solar and wind are the cheapest due to leaps in tech."}]
+
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 14,
+        "font": "Inter",
+        "dx": 530, 
+        "dy": -90
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "annotation",
+          "type": "ordinal"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [{"x": "2010", "y": 250, "annotation": "Throughout the years, coal and gas have stagnated in cost with "}]
+
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 14,
+        "font": "Inter",
+        "dx": 500, 
+        "dy": 30
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "annotation",
+          "type": "ordinal"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    },
+    {
+      "data": {
+        "values": [{"x": "2010", "y": 250, "annotation": "only nuclear energy becoming more costly."}]
+
+      },
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 14,
+        "font": "Inter",
+        "dx": 570, 
+        "dy": 60
+      },
+      "encoding": {
+        "x": {
+          "field": "x",
+          "type": "ordinal"
+        },
+        "y": {
+          "field": "y",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "annotation",
+          "type": "ordinal"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    },
+    {
+      "mark": {
         "type": "text",
         "dy": -20,
         "dx": 15,
@@ -156,12 +268,12 @@
     "axis": {
         "labelFont": "Inter",
         "titleFont": "Inter",
-        "titleFontSize": 24 
+        "titleFontSize": 18
     },
     "legend": {
         "titleFont": "Inter",
         "labelFont": "Inter",
-        "labelFontSize": 24
+        "labelFontSize": 18
     },
     "title": {
         "font": "Inter",
